@@ -8,6 +8,8 @@ dontaudit hal_audio_default perfd_socket:sock_file write;
 
 hal_client_domain(hal_audio_default, hal_power)
 
+allow hal_audio_default self:process execmem;
+
 userdebug_or_eng(`
   allow hal_audio diag_device:chr_file rw_file_perms;
 ')
